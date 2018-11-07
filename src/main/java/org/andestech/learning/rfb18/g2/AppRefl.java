@@ -70,6 +70,8 @@ public class AppRefl
 
      Data data = new Data();
 
+     //invoke private method
+
         System.out.println("d=" + data.getD());
         Method m1 = c.getDeclaredMethod("startD");
         m1.setAccessible(true);
