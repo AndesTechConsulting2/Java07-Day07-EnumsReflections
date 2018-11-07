@@ -68,23 +68,24 @@ public class AppRefl
      //1
      Class<?> c = Data.class;
 
-
      Data data = new Data();
 
         System.out.println("d=" + data.getD());
-//        Method m1 = c.getMethod("startD", c);
-//        m1.invoke(data);
+        Method m1 = c.getDeclaredMethod("startD");
+        m1.setAccessible(true);
+        m1.invoke(data);
 
      // change private field
 
+        Field f1 = data.getClass().getDeclaredField("d");
+        f1.setAccessible(true);
+        f1.set(data, 100);
 
-
-        for(Field f: c.getFields()) {
+        for(Field f: c.getDeclaredFields()) {
 
             System.out.println(f.getName());
         }
-//        Field f1 = data.getClass().getField("d");
-//        f1.set(data, 100);
+
 
 
 
