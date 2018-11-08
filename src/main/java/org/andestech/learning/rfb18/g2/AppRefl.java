@@ -6,7 +6,8 @@ import java.lang.reflect.Method;
 import java.lang.annotation.Annotation;
 
 @SuperClass
-@Logger(level = LoggingLevel.OnlyErrors)
+@Logger(level = LoggingLevel.OnlyErrors,
+        dest = {LoggingDestination.FileSystem, LoggingDestination.DataBase})
 
 //@Logger(level = LoggingLevel.OnlyErrors, destination = LoggingDestination.FileSystem)
 //    WindowsEventLog
@@ -118,6 +119,14 @@ public class AppRefl
                  //...
                  System.out.println("Error logging..."); break;
              //..
+
+         }
+         //
+         for(LoggingDestination d : l.dest())
+         {
+             if(d== LoggingDestination.WindowsEventLog) System.out.println("write to winlog...");
+             if(d== LoggingDestination.FileSystem) System.out.println("write to filesystem...");
+             if(d== LoggingDestination.DataBase) System.out.println("write to Database...");
 
          }
 
