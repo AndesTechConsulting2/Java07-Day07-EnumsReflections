@@ -1,18 +1,17 @@
 package org.andestech.learning.rfb18.g2;
 
-import com.sun.istack.internal.NotNull;
-
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import java.text.DateFormat;
-import java.util.Arrays;
 import java.lang.annotation.Annotation;
 
 @SuperClass
 @Logger(level = LoggingLevel.OnlyErrors)
+
+//@Logger(level = LoggingLevel.OnlyErrors, destination = LoggingDestination.FileSystem)
+//    WindowsEventLog
+//    DB
+//
 class Data
 {
  int a,b,c;
@@ -88,7 +87,7 @@ public class AppRefl
             System.out.println(f.getName());
         }
 
-
+        System.out.println("d=" + data.getD());
 
 
 
