@@ -10,7 +10,7 @@ import java.lang.annotation.Annotation;
 
 //@Logger(level = LoggingLevel.OnlyErrors, destination = LoggingDestination.FileSystem)
 //    WindowsEventLog
-//    DB
+//    DataBase
 //
 class Data
 {
